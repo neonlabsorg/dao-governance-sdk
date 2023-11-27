@@ -1,0 +1,8 @@
+import { AccountMeta, PublicKey, TransactionInstruction } from '@solana/web3.js';
+import { VoteType } from '../models';
+export declare const VOTE_PERCENTAGE_MAX = 10000;
+export declare function createProposalInstruction(name: string, description: string, programId: PublicKey, programVersion: number, realmKey: PublicKey, governanceKey: PublicKey, tokenOwnerRecordKey: PublicKey, governingTokenMint: PublicKey, governanceAuthority: PublicKey, proposalIndex: number, voteType: VoteType, options: string[], useDenyOption: boolean, payerKey: PublicKey, voterWeightRecord?: PublicKey, maxVoterWeightRecord?: PublicKey): [PublicKey, TransactionInstruction];
+export declare function realmConfigAccountsKeys(programId: PublicKey, realmKey: PublicKey, voterWeightRecord?: PublicKey, maxVoterWeightRecord?: PublicKey): AccountMeta[];
+export declare function proposalSignatoryInstruction(programId: PublicKey, programVersion: number, proposalKey: PublicKey, tokenOwnerRecordKey: PublicKey, governanceAuthority: PublicKey, signatory: PublicKey, payerKey: PublicKey): TransactionInstruction;
+export declare function votePercentageInstruction(programId: PublicKey, governingOwnerRecord: PublicKey, realmPublicKey: PublicKey, communityMint: PublicKey, payerKey: PublicKey, voterWeightRecord: PublicKey, communityVoterWeightAddin: PublicKey, votePercentage?: number): TransactionInstruction;
+export declare const cancelProposalInstruction: (programId: PublicKey, programVersion: number, realmKey: PublicKey, governanceKey: PublicKey, proposalKey: PublicKey, proposalOwnerRecordKey: PublicKey, governanceAuthority: PublicKey) => TransactionInstruction;

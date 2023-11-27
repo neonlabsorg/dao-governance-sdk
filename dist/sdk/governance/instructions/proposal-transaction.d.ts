@@ -1,0 +1,6 @@
+import { PublicKey, TransactionInstruction } from '@solana/web3.js';
+import { InstructionData } from '../models';
+export declare function removeTransactionInstruction(programId: PublicKey, proposalKey: PublicKey, tokenOwnerRecordKey: PublicKey, governanceAuthorityKey: PublicKey, proposalTransactionKey: PublicKey, walletKey: PublicKey): TransactionInstruction;
+export declare function insertTransactionInstruction(programId: PublicKey, programVersion: number, governanceKey: PublicKey, proposalKey: PublicKey, tokenOwnerRecordKey: PublicKey, governanceAuthorityKey: PublicKey, payerKey: PublicKey, transactionInstructions: InstructionData[], index: number, optionIndex: number, holdUpTime: number): TransactionInstruction;
+export declare function signOffProposalInstruction(programId: PublicKey, programVersion: number, realmKey: PublicKey, governanceKey: PublicKey, proposalKey: PublicKey, signatoryKey: PublicKey, signatoryRecordKey?: PublicKey, proposalOwnerRecordKey?: PublicKey): TransactionInstruction;
+export declare function executeTransactionInstruction(programId: PublicKey, programVersion: number, governanceKey: PublicKey, proposalKey: PublicKey, transactionAddressKey: PublicKey, transactionInstructions: InstructionData[]): TransactionInstruction;

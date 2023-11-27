@@ -1,0 +1,6 @@
+import { AccountMeta, PublicKey, TransactionInstruction } from '@solana/web3.js';
+import { Vote } from '../models';
+export declare function realmConfigKeys(programId: PublicKey, realm: PublicKey, voterWeightRecord?: PublicKey, maxVoterWeightRecord?: PublicKey): AccountMeta[];
+export declare function castVoteInstructions(programId: PublicKey, programVersion: number, realmKey: PublicKey, governanceKey: PublicKey, proposalKey: PublicKey, proposalOwnerRecordKey: PublicKey, tokenOwnerRecordKey: PublicKey, governanceAuthorityKey: PublicKey, governingTokenMint: PublicKey, payerKey: PublicKey, vote: Vote, voterWeightRecord?: PublicKey, maxVoterWeightRecordKey?: PublicKey): [PublicKey, TransactionInstruction];
+export declare function relinquishVoteInstruction(programId: PublicKey, governanceKey: PublicKey, proposalKey: PublicKey, tokenOwnerRecord: PublicKey, governingTokenMint: PublicKey, voteRecordKey: PublicKey, governanceAuthority?: PublicKey, walletKey?: PublicKey): TransactionInstruction;
+export declare function finalizeVoteInstruction(programId: PublicKey, programVersion: number, realmKey: PublicKey, governanceKey: PublicKey, proposalKey: PublicKey, proposalOwnerRecordKey: PublicKey, governingTokenMintKey: PublicKey, voterWeightRecordKey?: PublicKey, maxVoterWeightRecordKey?: PublicKey): TransactionInstruction;
