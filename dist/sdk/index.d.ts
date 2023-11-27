@@ -5,4 +5,5 @@ export * from './governance';
 export * from './models';
 export * from './registry';
 export * from './tools';
+export * from './transactions';
 export * from './utils';

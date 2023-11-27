@@ -4,15 +4,15 @@ import { AccountLayout, createInitializeAccountInstruction, TOKEN_PROGRAM_ID } f
  * Instructions to create and initialise vesting spl-token account
  * ref:https://github.com/neonlabsorg/neon-spl-governance/blob/f13d7e7c1507819306797688ce0bb1f6950a5038/addin-vesting/cli/src/main.rs#L58-L82
  */
-export function createVestingAccountInstructions(vestingProgramId, governingTokenMint, payer, amount) {
+export function createVestingAccountInstructions(vestingProgramId, governingTokenMint, publicKey, lamports) {
     const vestingTokenKeypair = Keypair.generate();
     const vestingTokenPubkey = vestingTokenKeypair.publicKey;
     const [vestingAccount] = PublicKey.findProgramAddressSync([vestingTokenPubkey.toBuffer()], vestingProgramId);
     const instructions = [];
     instructions.push(SystemProgram.createAccount({
-        fromPubkey: payer,
+        lamports,
+        fromPubkey: publicKey,
         newAccountPubkey: vestingTokenPubkey,
-        lamports: amount,
         space: AccountLayout.span,
         programId: TOKEN_PROGRAM_ID
     }));

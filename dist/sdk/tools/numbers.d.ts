@@ -1,4 +1,4 @@
-import BN from 'bn.js';
-import Big from 'big.js';
-export declare const BN_ZERO: BN;
-export declare const BIG_ZERO: Big.Big;
+/// <reference types="bn.js" />
+/// <reference types="big.js" />
+export declare const BN_ZERO: import("bn.js");
+export declare const BIG_ZERO: import("big.js").Big;
