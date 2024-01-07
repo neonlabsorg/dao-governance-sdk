@@ -1,7 +1,6 @@
 import {
   Commitment,
   Connection,
-  PublicKey,
   RpcResponseAndContext,
   SimulatedTransactionResponse,
   Transaction,

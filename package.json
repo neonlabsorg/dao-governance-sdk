@@ -1,22 +1,22 @@
 {
   "name": "@neonevm/dao-governance",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Neon DAO Governance SDK code base.",
   "private": false,
   "files": [
     "./dist/**/*"
   ],
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
   "engines": {
     "node": ">=18"
   },
   "scripts": {
     "start": "yarn test",
-    "clean": "rm -rf ./dist",
-    "build": "npm run clean && tsc",
-    "build:esm": "tsc -p ./tsconfig.esm.json",
-    "build:cjs": "tsc -p ./tsconfig.cjs.json",
+    "compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
+    "build": "npm-run-all build:clean compile && node ./scripts/prepare-package-json",
+    "build:clean": "rm -rf ./dist",
     "prepack": "npm run build",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch --detectOpenHandles",
@@ -36,7 +36,6 @@
     "library",
     "dapp"
   ],
-  "author": "NeonLabs Inc",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/neonlabsorg/dao-governance-sdk/issues"
@@ -56,6 +55,7 @@
     "bs58": "^5.0.0",
     "dotenv": "^16.3.1",
     "jest": "^29.7.0",
+    "npm-run-all": "^4.1.5",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
