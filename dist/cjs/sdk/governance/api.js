@@ -141,8 +141,8 @@ function getAllProposals(connection, programId, realmPk) {
 }
 exports.getAllProposals = getAllProposals;
 // Generic API
-function getGovernanceAccounts(connection, programId, AClass, filters = []) {
-    return __awaiter(this, void 0, void 0, function* () {
+function getGovernanceAccounts(connection_1, programId_1, AClass_1) {
+    return __awaiter(this, arguments, void 0, function* (connection, programId, AClass, filters = []) {
         const types = (0, models_1.getAccountTypes)(AClass);
         const result = [];
         for (const type of types) {

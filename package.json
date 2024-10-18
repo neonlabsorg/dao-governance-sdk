@@ -1,6 +1,6 @@
 {
   "name": "@neonevm/dao-governance",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Neon DAO Governance SDK code base.",
   "private": false,
   "files": [
@@ -42,22 +42,22 @@
   },
   "homepage": "https://github.com/neonlabsorg/dao-governance-sdk#readme",
   "dependencies": {
-    "@solana/spl-token": "^0.3.9",
-    "@solana/web3.js": "^1.87.6",
-    "big.js": "^6.2.1",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.95.4",
+    "big.js": "^6.2.2",
     "bignumber.js": "^9.1.2",
     "bn.js": "^5.2.1"
   },
   "devDependencies": {
     "@types/big.js": "^6.2.2",
-    "@types/bn.js": "^5.1.5",
-    "@types/jest": "^29.5.10",
-    "bs58": "^5.0.0",
-    "dotenv": "^16.3.1",
+    "@types/bn.js": "^5.1.6",
+    "@types/jest": "^29.5.13",
+    "bs58": "^6.0.0",
+    "dotenv": "^16.4.5",
     "jest": "^29.7.0",
     "npm-run-all": "^4.1.5",
-    "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.3.2"
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.4.5"
   }
 }

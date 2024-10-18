@@ -32,7 +32,7 @@ export interface GovernanceAccount {
 }
 export type GovernanceAccountClass = typeof Realm | typeof TokenOwnerRecord | typeof Governance | typeof Proposal | typeof SignatoryRecord | typeof VoteRecord | typeof ProposalTransaction | typeof RealmConfigAccount | typeof ProgramMetadata;
 export declare function getAccountTypes(accountClass: GovernanceAccountClass): GovernanceAccountType[];
-export declare function getAccountProgramVersion(accountType: GovernanceAccountType): 2 | 1;
+export declare function getAccountProgramVersion(accountType: GovernanceAccountType): 1 | 2;
 export declare enum VoteThresholdPercentageType {
     YesVote = 0,
     Quorum = 1
@@ -426,7 +426,7 @@ export declare class ProgramMetadata {
 }
 export declare function getProgramMetadataAddress(programId: PublicKey): PublicKey;
 export declare function getNativeTreasuryAddress(programId: PublicKey, governance: PublicKey): PublicKey;
-export declare function getGovernanceAccountVersion(accountType: GovernanceAccountType): 2 | 1;
+export declare function getGovernanceAccountVersion(accountType: GovernanceAccountType): 1 | 2;
 export declare enum VoteThresholdType {
     YesVotePercentage = 0,
     QuorumPercentage = 1,

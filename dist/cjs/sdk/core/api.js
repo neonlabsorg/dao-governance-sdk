@@ -37,8 +37,8 @@ const pubkeyFilter = (offset, pubkey) => new MemcmpFilter(offset, pubkey.toBuffe
 exports.pubkeyFilter = pubkeyFilter;
 const booleanFilter = (offset, value) => new MemcmpFilter(offset, Buffer.from(value ? [1] : [0]));
 exports.booleanFilter = booleanFilter;
-function getBorshProgramAccounts(connection, programId, getSchema, accountFactory, filters = [], accountType) {
-    return __awaiter(this, void 0, void 0, function* () {
+function getBorshProgramAccounts(connection_1, programId_1, getSchema_1, accountFactory_1) {
+    return __awaiter(this, arguments, void 0, function* (connection, programId, getSchema, accountFactory, filters = [], accountType) {
         accountType = accountType !== null && accountType !== void 0 ? accountType : new accountFactory({}).accountType;
         const programAccounts = yield connection.getProgramAccounts(programId, {
             commitment: connection.commitment,
